@@ -7,7 +7,7 @@ export default function Auth({ mode }) {
   const isSignup = mode === "signup";
   const navigate = useNavigate();
   const { login, signup } = useAuth();
-  const [form, setForm] = useState({ name: "", email: "", phone: "", password: "", role: "user" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -17,7 +17,7 @@ export default function Auth({ mode }) {
     setLoading(true);
     try {
       const user = isSignup ? await signup(form) : await login({ email: form.email, password: form.password });
-      navigate(user.role === "admin" ? "/admin" : "/dashboard");
+      navigate(user.role === "admin" || user.role === "superadmin" ? "/admin" : "/dashboard");
     } catch (err) {
       setError(err.response?.data?.message || "Authentication failed");
     } finally {
@@ -33,7 +33,7 @@ export default function Auth({ mode }) {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-leaf-600">Secure Access</p>
             <h1 className="mt-4 text-4xl font-black sm:text-6xl">{isSignup ? "Create your Vriksham account" : "Welcome back to Vriksham"}</h1>
             <p className="mt-5 max-w-xl leading-8 text-slate-600 dark:text-slate-300">
-              JWT authentication with user and admin roles keeps service requests, assignments, and operating data protected.
+              Create an account to manage service requests, shop orders, plant care reminders, and AI scan history.
             </p>
           </div>
           <form onSubmit={submit} className="glass rounded-[2rem] p-8">
@@ -41,10 +41,6 @@ export default function Auth({ mode }) {
               <>
                 <input className="input mb-4" placeholder="Name" value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} required />
                 <input className="input mb-4" placeholder="Phone" value={form.phone} onChange={(event) => setForm({ ...form, phone: event.target.value })} />
-                <select className="input mb-4" value={form.role} onChange={(event) => setForm({ ...form, role: event.target.value })}>
-                  <option value="user">User</option>
-                  <option value="admin">Admin</option>
-                </select>
               </>
             )}
             <input className="input mb-4" type="email" placeholder="Email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} required />

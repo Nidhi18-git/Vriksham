@@ -1,5 +1,6 @@
 import Gardener from "../models/Gardener.js";
 import AIReport from "../models/AIReport.js";
+import AdminRequest from "../models/AdminRequest.js";
 import Order from "../models/Order.js";
 import Plant from "../models/Plant.js";
 import ServiceRequest from "../models/ServiceRequest.js";
@@ -50,16 +51,17 @@ export async function getAnalytics(_req, res, next) {
 
 export async function getManagementData(_req, res, next) {
   try {
-    const [requests, orders, users, plants, gardeners, aiReports] = await Promise.all([
+    const [requests, orders, users, plants, gardeners, aiReports, adminRequests] = await Promise.all([
       ServiceRequest.find().populate("assignedGardener", "name").sort({ createdAt: -1 }).limit(50),
       Order.find().sort({ createdAt: -1 }).limit(50),
       User.find().select("-password").sort({ createdAt: -1 }).limit(50),
       Plant.find().sort({ createdAt: -1 }).limit(50),
       Gardener.find().sort({ createdAt: -1 }).limit(50),
-      AIReport.find().populate("user", "name email").sort({ createdAt: -1 }).limit(50)
+      AIReport.find().populate("user", "name email").sort({ createdAt: -1 }).limit(50),
+      AdminRequest.find().populate("user", "name email role").sort({ createdAt: -1 }).limit(50)
     ]);
 
-    res.json({ requests, orders, users, plants, gardeners, aiReports });
+    res.json({ requests, orders, users, plants, gardeners, aiReports, adminRequests });
   } catch (error) {
     next(error);
   }

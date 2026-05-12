@@ -13,7 +13,7 @@ router.get("/", protect, async (req, res, next) => {
   }
 });
 
-router.post("/", protect, authorize("admin"), async (req, res, next) => {
+router.post("/", protect, authorize("admin", "superadmin"), async (req, res, next) => {
   try {
     res.status(201).json(await Subscription.create(req.body));
   } catch (error) {

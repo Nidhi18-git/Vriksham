@@ -23,7 +23,7 @@ export default function Navbar() {
     localStorage.setItem("vriksham_theme", dark ? "dark" : "light");
   }, [dark]);
 
-  const dashboardPath = user?.role === "admin" ? "/admin" : "/dashboard";
+  const dashboardPath = user?.role === "admin" || user?.role === "superadmin" ? "/admin" : "/dashboard";
 
   return (
     <header className="sticky top-0 z-50 border-b border-leaf-100/70 bg-mist/85 backdrop-blur-xl dark:border-white/10 dark:bg-[#07140e]/85">

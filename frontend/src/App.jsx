@@ -14,10 +14,10 @@ import Shop from "./pages/Shop";
 import Services from "./pages/Services";
 import UserDashboard from "./pages/UserDashboard";
 
-function Protected({ children, role }) {
+function Protected({ children, roles }) {
   const { user, isAuthenticated } = useAuth();
   if (!isAuthenticated) return <Navigate to="/login" replace />;
-  if (role && user.role !== role) return <Navigate to="/" replace />;
+  if (roles?.length && !roles.includes(user.role)) return <Navigate to="/" replace />;
   return children;
 }
 
@@ -37,7 +37,7 @@ export default function App() {
           <Route path="/ai" element={<AIEcosystem />} />
           <Route path="/request-service" element={<Protected><RequestService /></Protected>} />
           <Route path="/dashboard" element={<Protected><UserDashboard /></Protected>} />
-          <Route path="/admin" element={<Protected role="admin"><AdminDashboard /></Protected>} />
+          <Route path="/admin" element={<Protected roles={["admin", "superadmin"]}><AdminDashboard /></Protected>} />
           <Route path="/login" element={<Auth mode="login" />} />
           <Route path="/signup" element={<Auth mode="signup" />} />
         </Routes>

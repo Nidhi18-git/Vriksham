@@ -6,7 +6,7 @@ const router = Router();
 
 router.post("/request", protect, createRequest);
 router.get("/requests", protect, getRequests);
-router.put("/assign-request/:id", protect, authorize("admin"), assignRequest);
-router.put("/update-status/:id", protect, authorize("admin"), updateStatus);
+router.put("/assign-request/:id", protect, authorize("admin", "superadmin"), assignRequest);
+router.put("/update-status/:id", protect, authorize("admin", "superadmin"), updateStatus);
 
 export default router;

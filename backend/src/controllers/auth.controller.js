@@ -14,7 +14,7 @@ function userPayload(user) {
 
 export async function signup(req, res, next) {
   try {
-    const { name, email, phone, password, role, location } = req.body;
+    const { name, email, phone, password, location } = req.body;
 
     if (!name || !email || !password) {
       return res.status(400).json({ message: "Name, email, and password are required" });
@@ -30,7 +30,7 @@ export async function signup(req, res, next) {
       email,
       phone,
       password,
-      role: role === "admin" ? "admin" : "user",
+      role: "user",
       location
     });
 
@@ -47,6 +47,10 @@ export async function login(req, res, next) {
 
     if (!user || !(await user.matchPassword(password))) {
       return res.status(401).json({ message: "Invalid email or password" });
+    }
+
+    if (user.blocked) {
+      return res.status(403).json({ message: "This account has been blocked" });
     }
 
     res.json({ token: generateToken(user), user: userPayload(user) });

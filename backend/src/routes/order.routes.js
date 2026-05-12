@@ -6,6 +6,6 @@ const router = Router();
 
 router.post("/", createOrder);
 router.get("/", protect, getOrders);
-router.put("/:id/status", protect, authorize("admin"), updateOrderStatus);
+router.put("/:id/status", protect, authorize("admin", "superadmin"), updateOrderStatus);
 
 export default router;

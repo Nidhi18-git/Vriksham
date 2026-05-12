@@ -12,9 +12,9 @@ The platform is designed for homes, offices, balconies, commercial spaces, and c
 - Checkout flow with order confirmation
 - User dashboard for requests, orders, reminders, and AI scan history
 - Admin dashboard with analytics and management tables
-- AI plant disease detection demo
-- AI plant recommendation demo
-- AI garden design generator demo
+- AI plant disease detection 
+- AI plant recommendation 
+- AI garden design generator 
 - Business page for AMC plans, subscriptions, and corporate green solutions
 - Dark mode support
 - Smooth animations and premium UI
@@ -45,11 +45,6 @@ Vriksham includes three AI-ready modules:
 - MongoDB
 - Mongoose
 
-**Media and Data**
-
-- Cloudinary-ready image upload structure
-- Local demo data seed script
-- AI report storage structure
 
 ## How To Start
 
@@ -102,4 +97,7 @@ npm run seed
 Vriksham/
   backend/    Node.js, Express and MongoDB server
   frontend/   React, Tailwind, pages, dashboards and UI
+```
+
+
 ```
