@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" role="img" aria-labelledby="title desc">
+  <title id="title">Peace Lily Plant</title>
+  <desc id="desc">A peace lily plant with dark green leaves and white flowers in a planter.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#eefcf3"/>
+      <stop offset="1" stop-color="#b8ebcc"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#66d28a"/>
+      <stop offset="1" stop-color="#0d5f38"/>
+    </linearGradient>
+    <linearGradient id="leafDark" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2aa766"/>
+      <stop offset="1" stop-color="#083f2b"/>
+    </linearGradient>
+    <linearGradient id="flower" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dff7e8"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="650" fill="url(#bg)"/>
+  <circle cx="710" cy="115" r="145" fill="#ffffff" opacity=".35"/>
+  <circle cx="170" cy="155" r="110" fill="#ffffff" opacity=".28"/>
+  <g transform="translate(0 12)">
+    <path d="M451 545 C435 426 424 295 402 172" fill="none" stroke="#0f5c38" stroke-width="14" stroke-linecap="round"/>
+    <path d="M446 548 C478 418 526 291 595 149" fill="none" stroke="#0f5c38" stroke-width="13" stroke-linecap="round"/>
+    <path d="M431 548 C379 405 326 296 258 172" fill="none" stroke="#0f5c38" stroke-width="13" stroke-linecap="round"/>
+    <path d="M465 550 C538 414 639 315 740 239" fill="none" stroke="#0f5c38" stroke-width="12" stroke-linecap="round"/>
+    <path d="M416 550 C344 423 250 337 156 278" fill="none" stroke="#0f5c38" stroke-width="12" stroke-linecap="round"/>
+
+    <path d="M397 190 C319 99 214 119 170 216 C241 252 350 255 397 190Z" fill="url(#leaf)" />
+    <path d="M248 179 C293 201 344 201 392 188" fill="none" stroke="#dbffe7" stroke-width="4" opacity=".55"/>
+    <path d="M595 159 C646 51 768 48 824 141 C754 198 649 225 595 159Z" fill="url(#leafDark)" />
+    <path d="M641 146 C686 149 744 137 804 116" fill="none" stroke="#c9f7d8" stroke-width="4" opacity=".45"/>
+    <path d="M259 182 C155 137 78 198 82 304 C169 319 265 275 259 182Z" fill="url(#leafDark)" />
+    <path d="M132 269 C172 249 219 218 255 184" fill="none" stroke="#c9f7d8" stroke-width="4" opacity=".45"/>
+    <path d="M735 249 C793 158 881 180 891 283 C817 324 747 320 735 249Z" fill="url(#leaf)" />
+    <path d="M774 283 C807 263 843 243 878 218" fill="none" stroke="#dbffe7" stroke-width="4" opacity=".5"/>
+    <path d="M157 285 C62 275 12 362 68 444 C154 420 217 358 157 285Z" fill="url(#leaf)" />
+    <path d="M76 415 C105 373 129 329 156 286" fill="none" stroke="#dbffe7" stroke-width="4" opacity=".5"/>
+    <path d="M522 294 C574 206 686 215 731 302 C656 363 563 369 522 294Z" fill="url(#leafDark)" />
+    <path d="M564 309 C611 296 664 273 715 244" fill="none" stroke="#c9f7d8" stroke-width="4" opacity=".45"/>
+    <path d="M335 313 C251 246 149 281 131 387 C223 425 323 397 335 313Z" fill="url(#leafDark)" />
+    <path d="M183 377 C228 357 280 331 330 313" fill="none" stroke="#c9f7d8" stroke-width="4" opacity=".45"/>
+
+    <path d="M386 138 C344 78 371 18 444 28 C467 95 438 144 386 138Z" fill="url(#flower)" stroke="#c7ead4" stroke-width="3"/>
+    <path d="M417 61 C423 87 420 110 400 135" fill="none" stroke="#d4e8da" stroke-width="3"/>
+    <rect x="416" y="86" width="18" height="72" rx="9" fill="#e0bf5a"/>
+    <path d="M603 132 C574 58 623 4 699 31 C704 111 660 154 603 132Z" fill="url(#flower)" stroke="#c7ead4" stroke-width="3"/>
+    <path d="M649 57 C648 87 637 111 610 131" fill="none" stroke="#d4e8da" stroke-width="3"/>
+    <rect x="626" y="82" width="18" height="76" rx="9" fill="#d8b94d"/>
+
+    <path d="M305 535 H593 L559 635 H340 Z" fill="#243c2f"/>
+    <path d="M318 535 H580 C562 571 515 591 449 591 C382 591 336 571 318 535Z" fill="#355443"/>
+    <ellipse cx="449" cy="535" rx="146" ry="31" fill="#486b57"/>
+  </g>
+</svg>
