@@ -1,90 +1,105 @@
-# VRIKSHAM - The Future of Green Infrastructure
+# VRIKSHAM - Smart Green Infrastructure Platform
 
-Modern full-stack green infrastructure platform for managed gardening services, plant maintenance, subscriptions, admin operations, and future AI/IoT modules.
+Vriksham is a modern full-stack web platform for professional gardening services, plant care, green infrastructure management, plant shopping, and AI-powered plant assistance.
+
+The platform is designed for homes, offices, balconies, commercial spaces, and corporate green infrastructure programs.
+
+## Features
+
+- Modern responsive startup-style website
+- Service request flow for gardening and plant maintenance
+- Plant and flower shopping experience
+- Checkout flow with order confirmation
+- User dashboard for requests, orders, reminders, and AI scan history
+- Admin dashboard with analytics and management tables
+- AI plant disease detection demo
+- AI plant recommendation demo
+- AI garden design generator demo
+- Business page for AMC plans, subscriptions, and corporate green solutions
+- Dark mode support
+- Smooth animations and premium UI
+
+## AI Features
+
+Vriksham includes three AI-ready modules:
+
+- **AI Plant Disease Detection**: upload a plant image, scan symptoms, and receive disease result, confidence score, treatment suggestions, and prevention tips.
+- **AI Plant Recommendation System**: recommend plants based on sunlight, indoor/outdoor use, budget, climate, room size, and maintenance level.
+- **AI Garden Design Generator**: generate garden or balcony layout ideas with plant placement, decor suggestions, and space optimization.
 
 ## Tech Stack
 
-- Frontend: React, Tailwind CSS, Framer Motion, React Router, Axios, React Icons
-- Backend: Node.js, Express.js, MongoDB, Mongoose
-- Auth: JWT, bcrypt password hashing, role-based access control
-- Media: Cloudinary upload-ready service layer
+**Frontend**
 
-## Project Structure
+- React.js
+- Tailwind CSS
+- Framer Motion
+- React Router
+- Axios
+- React Icons
+
+**Backend**
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+
+**Media and Data**
+
+- Cloudinary-ready image upload structure
+- Local demo data seed script
+- AI report storage structure
+
+## How To Start
+
+Install backend dependencies:
+
+```bash
+cd backend
+npm install
+```
+
+Install frontend dependencies:
+
+```bash
+cd frontend
+npm install
+```
+
+Start backend:
+
+```bash
+cd backend
+npm run dev
+```
+
+Start frontend:
+
+```bash
+cd frontend
+npm run dev
+```
+
+Open the website:
 
 ```txt
-Vriksham/
-  frontend/   React SaaS website and dashboards
-  backend/    Express API, MongoDB schemas, auth, admin modules
+http://localhost:5173
 ```
 
-## Quick Start
+## Demo Data
 
-1. Install dependencies:
-
-```bash
-cd backend && npm install
-cd ../frontend && npm install
-```
-
-2. Configure environment files:
-
-```bash
-copy backend\.env.example backend\.env
-copy frontend\.env.example frontend\.env
-```
-
-3. Start both apps:
-
-```bash
-cd backend && npm run dev
-cd frontend && npm run dev
-```
-
-Frontend runs on `http://localhost:5173`. Backend runs on `http://localhost:5000`.
-
-Seed demo data:
+To populate the website with sample content:
 
 ```bash
 cd backend
 npm run seed
 ```
 
-Demo accounts:
+## Project Structure
 
-- Admin: `admin@vriksham.com` / `password123`
-- User: `user@vriksham.com` / `password123`
-
-## Core API
-
-- `POST /api/signup`
-- `POST /api/login`
-- `POST /api/request`
-- `GET /api/requests`
-- `PUT /api/assign-request/:id`
-- `PUT /api/update-status/:id`
-- `GET /api/profile`
-- `PUT /api/profile`
-- `GET /api/admin/analytics`
-- `POST /api/upload`
-- `POST /api/ai/:module`
-- `GET /api/plants`
-- `POST /api/orders`
-- `GET /api/orders`
-- `PUT /api/orders/:id/status`
-
-## Deployment Guide
-
-See `DEPLOYMENT.md` for production environment variables, hosting options, and launch notes.
-
-## AI-Ready Architecture
-
-The backend includes `AIReport` schema support and `/api/ai/*` placeholder routes for:
-
-- Plant disease detection
-- Plant recommendation
-- Garden design generation
-- Smart plant care assistant
-- Subscription prediction
-- Weather-based alerts
-- Green space analytics
-- IoT + AI sensor integrations
+```txt
+Vriksham/
+  backend/    Node.js, Express and MongoDB server
+  frontend/   React, Tailwind, pages, dashboards and UI
+```
